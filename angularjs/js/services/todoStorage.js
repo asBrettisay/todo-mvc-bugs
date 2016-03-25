@@ -133,10 +133,9 @@ angular.module('todomvc')
 
 				var deferred = $q.defer();
 				var removed = store.todos.indexOf(todo);
-				return (function(){
-					store.todos.splice(removed, 1);
-					console.log(store.todos);
-				}());
+
+				store.todos.splice(removed, 1);
+				console.log(store.todos);
 
 				store._saveToLocalStorage(store.todos);
 				deferred.resolve(store.todos);

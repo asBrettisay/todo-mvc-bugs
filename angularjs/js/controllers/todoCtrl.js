@@ -33,11 +33,11 @@ angular.module('todomvc')
 		$scope.addTodo = function () {
 			var newTodo = {
 				title: $scope.newTodo.trim(),
-				completed: true
+				completed: false
 			};
 
 
-			if (newTodo.title) {
+			if (!newTodo.title) {
 				return;
 			}
 
@@ -57,7 +57,7 @@ angular.module('todomvc')
 					})
 					.finally(function () {
 						$scope.saving = false;
-						savingNewTodo()
+						// savingNewTodo()
 					});
 
 			}
